@@ -2,8 +2,9 @@ const express = require('express')
 const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
 const authRouter = require('./routes/authRouter')
+const appRouter = require('./routes/appRouter')
 const path = require('path');
-
+const bodyParser = require('body-parser')
 
 const PORT = process.env.port || 4200;
 
@@ -17,10 +18,13 @@ app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', 'views')
 
-app.use(express.json());
-app.use(authRouter);
-app.use(express.urlencoded({ extended: true }))
+
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
+
+app.use(authRouter);
+app.use(appRouter);
 
 async function start() {
   try {

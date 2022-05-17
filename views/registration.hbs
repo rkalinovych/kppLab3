@@ -1,4 +1,4 @@
-<form action="/registration" method="post">
+<form action="/registration" method="POST">
   <div class="container">
     <div>
         <div>
@@ -18,19 +18,16 @@
 
     <hr>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <label for="username"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="username" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
     <hr>
-    <button type="submit" class="registerbtn">Register</button>
+    <input type="submit" class="registerbtn"></input>
   </div>
 
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="/login">Sign in</a>.</p>
   </div>
 </form>
